@@ -1,0 +1,41 @@
+2018-05-10 11:05:31.549+0000 INFO  Successfully started database
+2018-05-10 11:05:31.696+0000 INFO  Starting HTTP on port 7474 (2 threads available)
+2018-05-10 11:05:32.278+0000 INFO  Enabling HTTPS on port 7473
+2018-05-10 11:05:32.473+0000 INFO  Mounting static content at /webadmin
+2018-05-10 11:05:32.620+0000 INFO  Mounting static content at /browser
+2018-05-10 11:05:35.190+0000 INFO  Remote interface ready and available at http://0.0.0.0:7474/
+2018-05-10 11:05:35.623+0000 WARN  Failed authentication attempt for 'neo4j' from 172.18.0.1
+2018-05-10 11:39:08.437+0000 INFO  No SSL certificate found, generating a self-signed certificate..
+2018-05-10 11:39:26.931+0000 INFO  Successfully started database
+2018-05-10 11:39:27.092+0000 INFO  Starting HTTP on port 7474 (2 threads available)
+2018-05-10 11:39:27.764+0000 INFO  Enabling HTTPS on port 7473
+2018-05-10 11:39:27.910+0000 INFO  Mounting static content at /webadmin
+2018-05-10 11:39:27.988+0000 INFO  Mounting static content at /browser
+2018-05-10 11:39:31.030+0000 INFO  Remote interface ready and available at http://0.0.0.0:7474/
+2018-05-25 16:13:39.412+0000 INFO  No SSL certificate found, generating a self-signed certificate..
+2018-05-25 16:14:00.704+0000 INFO  Successfully started database
+2018-05-25 16:14:01.048+0000 INFO  Starting HTTP on port 7474 (2 threads available)
+2018-05-25 16:14:01.539+0000 INFO  Enabling HTTPS on port 7473
+2018-05-25 16:14:01.687+0000 INFO  Mounting static content at /webadmin
+2018-05-25 16:14:01.795+0000 INFO  Mounting static content at /browser
+2018-05-25 16:14:06.422+0000 INFO  Remote interface ready and available at http://0.0.0.0:7474/
+2018-07-01 10:13:47.591+0000 INFO  No SSL certificate found, generating a self-signed certificate..
+2018-07-01 10:14:06.280+0000 INFO  Successfully started database
+2018-07-01 10:14:06.361+0000 INFO  Starting HTTP on port 7474 (2 threads available)
+2018-07-01 10:14:07.324+0000 INFO  Enabling HTTPS on port 7473
+2018-07-01 10:14:07.522+0000 INFO  Mounting static content at /webadmin
+2018-07-01 10:14:07.607+0000 INFO  Mounting static content at /browser
+2018-07-01 10:14:10.934+0000 INFO  Remote interface ready and available at http://0.0.0.0:7474/
+2018-08-21 19:30:16.389+0000 INFO  No SSL certificate found, generating a self-signed certificate..
+2018-08-21 19:30:34.190+0000 INFO  Successfully started database
+2018-08-21 19:30:34.256+0000 INFO  Starting HTTP on port 7474 (2 threads available)
+2018-08-21 19:30:35.388+0000 INFO  Enabling HTTPS on port 7473
+2018-08-21 19:30:35.632+0000 INFO  Mounting static content at /webadmin
+2018-08-21 19:30:35.746+0000 INFO  Mounting static content at /browser
+2018-08-21 19:30:41.494+0000 INFO  Remote interface ready and available at http://0.0.0.0:7474/
+2018-08-21 19:50:37.468+0000 INFO  Successfully started database
+2018-08-21 19:50:37.545+0000 INFO  Starting HTTP on port 7474 (2 threads available)
+2018-08-21 19:50:38.048+0000 INFO  Enabling HTTPS on port 7473
+2018-08-21 19:50:38.301+0000 INFO  Mounting static content at /webadmin
+2018-08-21 19:50:38.376+0000 INFO  Mounting static content at /browser
+2018-08-21 19:50:40.935+0000 INFO  Remote interface ready and available at http://0.0.0.0:7474/

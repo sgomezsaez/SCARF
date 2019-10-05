@@ -1,0 +1,88 @@
+version: '2'
+services:
+  scarf-pertos:
+    image: sgomezsaez/scarf-graphrepository:latest
+    container_name: scarf-pertos
+    ports:
+      - "8090:8080"
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      - NEO4J_AUTH=none 
+    volumes:
+      - "./data-graph-repository:/var/lib/neo4j/data"
+  scarf-nefolog:
+    image: sgomezsaez/scarf-nefolog:latest
+    ports:
+      - "8010:8080"
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres 
+      - POSTGRES_PASSWORD=123456789
+      - POSTGRES_DB=PGCloudmigration
+    networks:
+      - nefolog_net
+  scarf-similarity-mysql:
+    image: mysql:5.5
+    container_name: scarf-similarity-mysql
+    ports:
+      - "3306:3306"
+    restart: always
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_bin
+    environment:
+      - MYSQL_USER=user 
+      - MYSQL_PASSWORD=password 
+      - MYSQL_ROOT_PASSWORD=password2
+      - MYSQL_DATABASE=KnowledgeBase 
+    volumes:
+      - "./data-similarityengine-scripts/localdb-run.sh:/localdb-run.sh"
+      - "./data-similarityengine-scripts/CaseBase.sql:/docker-entrypoint-initdb.d/CaseBase.sql"
+      - "./data-similarity-engine-database:/var/lib/mysql:rw"
+    networks:
+      - mysql_net
+  scarf-similarity-engine:
+    image: sgomezsaez/scarf-similarityengine
+    links:
+      - scarf-similarity-mysql:scarf-similarity-mysql
+    depends_on:
+      - scarf-similarity-mysql
+    ports:
+      - "8095:8080"
+    networks:
+      - mysql_net
+  scarf_kereta:
+    image: sgomezsaez/scarf-utilitymodule
+    links:
+      - scarf-kereta-database:scarf-kereta-database
+      - scarf-nefolog:scarf-nefolog
+    ports:
+      - '8075:8080'
+    depends_on:
+      - scarf-kereta-database
+      - scarf-nefolog
+    command: /usr/local/tomcat/bin/catalina.sh run
+    networks:
+      - kereta_net
+      - nefolog_net
+  scarf-kereta-database:
+    image: mysql:5.5
+    container_name: scarf-kereta-database
+    volumes:
+      - "./data-kereta-scripts/localdb-run.sh:/localdb-run.sh"
+      - "./data-kereta-scripts/Kereta.sql:/docker-entrypoint-initdb.d/Kereta.sql"
+      - "./data-kereta-database:/var/lib/mysql:rw"
+    ports: 
+      - '3302:3306'
+    restart: always
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_bin
+    environment:
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password2
+      - MYSQL_DATABASE=Kereta 
+    networks:
+      - kereta_net
+networks:
+  nefolog_net:
+  mysql_net:
+  kereta_net:
